@@ -47,6 +47,7 @@
             <label class="remember">
               <input type="checkbox" id="remember" /> Lembrar-me
             </label>
+            <a href="#" id="forgot-link" aria-label="Esqueci minha senha">Esqueci minha senha</a>
           </div>
 
           <button type="submit" class="primary" id="submit-btn">Entrar</button>
@@ -58,9 +59,36 @@
             Não tem conta? <a href="#" id="signup-link">Criar conta</a>
           </p>
         </footer>
+
+        <!-- Seção de redefinição de senha (aparece ao abrir link de recuperação do e-mail) -->
+        <section id="reset-section" class="card-reset" hidden aria-label="Redefinir senha">
+          <div class="field">
+            <label for="new-password">Nova senha</label>
+            <div class="password-wrapper">
+              <input type="password" id="new-password" name="new-password" autocomplete="new-password" placeholder="Nova senha" minlength="6" />
+            </div>
+            <small class="error" id="new-password-error" aria-live="polite"></small>
+          </div>
+
+          <div class="field">
+            <label for="confirm-password">Confirmar nova senha</label>
+            <div class="password-wrapper">
+              <input type="password" id="confirm-password" name="confirm-password" autocomplete="new-password" placeholder="Confirmar senha" minlength="6" />
+            </div>
+            <small class="error" id="confirm-password-error" aria-live="polite"></small>
+          </div>
+
+          <button id="update-password-btn" class="primary">Atualizar senha</button>
+          <div class="form-message" id="reset-message" role="status" aria-live="polite"></div>
+        </section>
       </section>
     </main>
 
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Configurações públicas (Webhook e Supabase) -->
+    <script src="config.js"></script>
+    <!-- Lógica de login -->
     <script src="app.js"></script>
   </body>
   </html>
