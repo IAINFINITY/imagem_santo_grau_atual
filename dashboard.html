@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - ImagemSG</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brandbar">
+        <div class="logo-circle" aria-hidden="true">ISG</div>
+        <span class="brandname">ImagemSG</span>
+      </div>
+      <button id="logout-btn" class="secondary">Sair</button>
+    </header>
+
+    <div id="loading-overlay" class="loading" role="status" aria-live="polite">
+      <div class="spinner"></div>
+      <p>Aguarde, a mágica está acontecendo...</p>
+    </div>
+
+    <main class="container">
+      <section class="welcome">
+        <h2 id="greeting">Olá!</h2>
+        <p class="subtitle">Você está autenticado. Aqui está seu painel.</p>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h3>Criar nova imagem.</h3>
+          <p>Inicie um novo fluxo de trabalho/projeto.</p>
+          <a href="#" class="action-plus" aria-label="Criar nova imagem" title="Criar nova imagem">Adicionar +</a>
+        </article>
+      </section>
+    </main>
+
+    <!-- Modal: Criar nova imagem -->
+    <div id="create-modal" class="overlay" role="dialog" aria-modal="true" aria-labelledby="create-modal-title">
+      <div class="modal" tabindex="-1">
+        <header class="modal-header">
+          <h2 id="create-modal-title">Criar nova imagem</h2>
+          <button type="button" class="modal-close" aria-label="Fechar modal" title="Fechar">×</button>
+        </header>
+        <div class="modal-body">
+          <div class="modal-section">
+            <label class="modal-label">1. Adicione a imagem do cliente:</label>
+            <div class="preview-box" id="client-preview" aria-label="Pré-visualização da imagem do cliente"></div>
+            <input type="file" id="client-file" class="file-input" accept="image/*" />
+          </div>
+
+          <div class="modal-section">
+            <label class="modal-label">3. Adicione o modelo de óculos desejado:</label>
+            <div class="preview-box" id="glasses-preview" aria-label="Pré-visualização do modelo de óculos"></div>
+            <input type="file" id="glasses-file" class="file-input" accept="image/*" />
+          </div>
+
+          <div class="modal-actions">
+            <button id="start-magic" class="primary-dark">Iniciar mágica</button>
+            <div id="modal-message" class="form-message" role="status" aria-live="polite"></div>
+          </div>
+
+          <div class="modal-section">
+            <label class="modal-label">Resposta do webhook:</label>
+            <pre id="webhook-response" class="code-block" aria-live="polite"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - ImagemSG</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="login-page" style="--login-bg-image: url('https://raw.githubusercontent.com/IAINFINITY/links/main/background_santo_grau.png');">
+      <section class="card" aria-label="Formulário de login">
+        <header class="brand" aria-label="Logo ImagemSG">
+          <img src="https://raw.githubusercontent.com/IAINFINITY/links/main/logo_santo_grau_front.png" alt="ImagemSG" class="logo-img" />
+        </header>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="username"
+              placeholder="seu@email.com"
+              required
+            />
+            <small class="error" id="email-error" aria-live="polite"></small>
+          </div>
+
+          <div class="field">
+            <label for="password">Senha</label>
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                autocomplete="current-password"
+                placeholder="••••••••"
+                required
+                minlength="6"
+              />
+            </div>
+            <small class="error" id="password-error" aria-live="polite"></small>
+          </div>
+
+          <div class="options">
+            <label class="remember">
+              <input type="checkbox" id="remember" /> Lembrar-me
+            </label>
+          </div>
+
+          <button type="submit" class="primary" id="submit-btn">Entrar</button>
+          <div class="form-message" id="form-message" role="status" aria-live="polite"></div>
+        </form>
+
+        <footer class="footer">
+          <p>
+            Não tem conta? <a href="#" id="signup-link">Criar conta</a>
+          </p>
+        </footer>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+  </html>
