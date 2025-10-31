@@ -12,7 +12,6 @@
         <header class="brand" aria-label="Logo ImagemSG">
           <img src="https://raw.githubusercontent.com/IAINFINITY/links/main/logo_santo_grau_front.png" alt="ImagemSG" class="logo-img" />
         </header>
-
         <form id="login-form" novalidate>
           <div class="field">
             <label for="email">E-mail</label>
@@ -26,7 +25,6 @@
             />
             <small class="error" id="email-error" aria-live="polite"></small>
           </div>
-
           <div class="field">
             <label for="password">Senha</label>
             <div class="password-wrapper">
@@ -42,24 +40,20 @@
             </div>
             <small class="error" id="password-error" aria-live="polite"></small>
           </div>
-
           <div class="options">
             <label class="remember">
               <input type="checkbox" id="remember" /> Lembrar-me
             </label>
             <a href="#" id="forgot-link" aria-label="Esqueci minha senha">Esqueci minha senha</a>
           </div>
-
           <button type="submit" class="primary" id="submit-btn">Entrar</button>
           <div class="form-message" id="form-message" role="status" aria-live="polite"></div>
         </form>
-
         <footer class="footer">
           <p>
             Não tem conta? <a href="#" id="signup-link">Criar conta</a>
           </p>
         </footer>
-
         <!-- Seção de redefinição de senha (aparece ao abrir link de recuperação do e-mail) -->
         <section id="reset-section" class="card-reset" hidden aria-label="Redefinir senha">
           <div class="field">
@@ -69,7 +63,6 @@
             </div>
             <small class="error" id="new-password-error" aria-live="polite"></small>
           </div>
-
           <div class="field">
             <label for="confirm-password">Confirmar nova senha</label>
             <div class="password-wrapper">
@@ -77,13 +70,11 @@
             </div>
             <small class="error" id="confirm-password-error" aria-live="polite"></small>
           </div>
-
           <button id="update-password-btn" class="primary">Atualizar senha</button>
           <div class="form-message" id="reset-message" role="status" aria-live="polite"></div>
         </section>
       </section>
     </main>
-
     <!-- Supabase SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <!-- Configurações públicas (Webhook e Supabase) -->
@@ -91,4 +82,4 @@
     <!-- Lógica de login -->
     <script src="app.js"></script>
   </body>
-  </html>
+</html>
